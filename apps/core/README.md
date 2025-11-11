@@ -22,5 +22,3 @@ npm run dev
 ```
 
 The core app runs on port 3000 by default.
-
-count: 0

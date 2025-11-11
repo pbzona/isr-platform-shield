@@ -27,5 +27,3 @@ npm run dev
 ```
 
 The cache layer runs on port 3000 by default.
-
-count: 0
