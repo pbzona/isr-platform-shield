@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   experimental: {
     serverActions: {
       allowedOrigins: [
-        'www.high-performance-platform.com'
+        'www.pzona.lol'
       ],
     },
   },

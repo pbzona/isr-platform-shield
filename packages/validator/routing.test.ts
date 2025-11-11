@@ -2,7 +2,7 @@ import { requestPage } from "./util";
 
 describe('Routing', () => {
   test('should load homepage', async () => {
-    const response = await requestPage('https://www.high-performance-platform.com');
+    const response = await requestPage('https://www.pzona.lol');
     expect(response.status).toBe(200);
 
     const html = await response.text();
@@ -10,7 +10,7 @@ describe('Routing', () => {
   });
 
   test('should load subdomain page', async () => {
-    const response = await requestPage('https://cool.high-performance-platform.com');
+    const response = await requestPage('https://cool.pzona.lol');
     expect(response.status).toBe(200);
 
     const html = await response.text();
@@ -20,7 +20,7 @@ describe('Routing', () => {
   });
 
   test('should load post page', async () => {
-    const response = await requestPage('https://cool.high-performance-platform.com/1');
+    const response = await requestPage('https://cool.pzona.lol/1');
     expect(response.status).toBe(200);
 
     const html = await response.text();
@@ -28,7 +28,7 @@ describe('Routing', () => {
   });
 
   test('should load admin page', async () => {
-    const response = await requestPage('https://www.high-performance-platform.com/admin');
+    const response = await requestPage('https://www.pzona.lol/admin');
     expect(response.status).toBe(200);
 
     const html = await response.text();

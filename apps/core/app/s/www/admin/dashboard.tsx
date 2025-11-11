@@ -118,7 +118,7 @@ export function AdminDashboard({ tenants }: { tenants: Tenant[] }) {
   return (
     <div className="space-y-6 relative p-4 md:p-8">
       <DashboardHeader
-        host={process.env.NEXT_PUBLIC_ROOT_DOMAIN || "high-performance-platform.com"}
+        host={process.env.NEXT_PUBLIC_ROOT_DOMAIN || "pzona.lol"}
       />
       <TenantGrid tenants={tenants} action={action} isPending={isPending} />
 

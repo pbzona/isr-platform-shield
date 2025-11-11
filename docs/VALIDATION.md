@@ -45,6 +45,6 @@ A quick test to observe the invalidation behavior:
 
 ## Skew protection
 
-Skew protection can be tested on the blog post pages by visiting a page (hard nav) like `https://cool.high-performance-platform.com/1`, returning to the code, deleting entries from `core/lib/data.json`, and deploying while remaining on the page.
+Skew protection can be tested on the blog post pages by visiting a page (hard nav) like `https://cool.pzona.lol/1`, returning to the code, deleting entries from `core/lib/data.json`, and deploying while remaining on the page.
 
 When you return to the browser, soft nav to the broken pages will continue to function, even beyond the 120s `s-maxage` value, as requests continue to route through the "pinned" deployment.
