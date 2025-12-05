@@ -1,42 +1,20 @@
 {
 	"$schema": "https://openapi.vercel.sh/vercel.json",
-	"routes": [
+	"headers": [
 		{
-			"src": "/api/shield/(.*)",
-			"dest": "/api/$1"
-		},
-		{
-			"src": "/",
-			"has": [
+			"source": "/((?!_next|api).*)",
+			"headers": [
 				{
-					"type": "host",
-					"value": "(?<host>.*)\\.[^\\.]+\\.[^\\.]+"
+					"key": "CDN-Cache-Control",
+					"value": "s-maxage=120, stale-while-revalidate=31556952"
 				}
-			],
-			"headers": {
-				"CDN-Cache-Control": "s-maxage=120, stale-while-revalidate=31556952"
-			},
-			"dest": "https://core.vercel-labs.vercel.app/s/$host"
-		},
+			]
+		}
+	],
+	"rewrites": [
 		{
-			"src": "/((?!_next|api).*)",
-			"has": [
-				{
-					"type": "host",
-					"value": "(?<host>.*)\\.[^\\.]+\\.[^\\.]+"
-				}
-			],
-			"headers": {
-				"CDN-Cache-Control": "s-maxage=120, stale-while-revalidate=31556952"
-			},
-			"dest": "https://core.vercel-labs.vercel.app/s/$host/$1"
-		},
-		{
-			"src": "(.*)",
-			"dest": "https://core.vercel-labs.vercel.app$1",
-			"headers": {
-				"CDN-Cache-Control": "s-maxage=120, stale-while-revalidate=31556952"
-			}
+			"source": "/api/shield/(.*)",
+			"destination": "/api/$1"
 		}
 	]
 }
